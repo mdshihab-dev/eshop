@@ -1,4 +1,3 @@
-import React from 'react'
 import Container from '../components/layouts/Container'
 import Counter from '../components/Counter'
 import DeleteIcon from '../components/icons/DeleteIcon'
@@ -6,6 +5,7 @@ import ShareIcon2 from '../components/icons/ShareIcon2'
 import ShareIcon from '../components/icons/ShareIcon'
 import Facility from '../components/Facility'
 import Button from '../components/Button'
+import { Link } from 'react-router-dom'
 
 const CartPage = () => {
   return (
@@ -13,9 +13,9 @@ const CartPage = () => {
    <div className=' mt-16 mb-20'>
      <Container>
         <div className=" flex items-center gap-x-5 text-[#303030] font-montserrat text-base font-normal leading-6">
-          <div>Home</div>
+          <Link to='/' className=' cursor-pointer'>Home</Link>
             <span className=" h-[15px] w-[1px] bg-[#303030]"></span>
-          <div className=' font-bold'>Cart</div>
+          <div className=' font-bold cursor-pointer'>Cart</div>
         </div>
 
         <h1 className=' text-[#303030] mb-7 font-poppins text-[56px] font-bold leading-17 mt-12'>Your Cart</h1>

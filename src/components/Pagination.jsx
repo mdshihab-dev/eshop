@@ -31,7 +31,7 @@ const Pagination = ({ totalProducts, parPageProducts, currentPage, onPageChange}
   }
 
   return (
-    <div className=" flex justify-center my-20">
+    <div className=" max-w-screen lg:w-full flex justify-center my-2 lg:my-20 scale-75 lg:scale-100">
       <button
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}

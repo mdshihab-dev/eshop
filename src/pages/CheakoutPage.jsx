@@ -47,8 +47,28 @@ const CheakoutPage = () => {
         </div>
 
         <div className=' my-20 flex gap-x-[56px]'>
-            <BillingDetails/>
-            <OrderSummary/>
+            {
+              active == '01' && (
+              <h2 className=' text-center w-full font-poppins text-xl font-semibold leading-9 text-[#303030]'>
+                Currently there is no information available.
+              </h2>
+              )
+            }
+            {
+              active == '02' && (
+              <h2 className=' text-center w-full font-poppins text-xl font-semibold leading-9 text-[#303030]'>
+                Currently there is no shipping available.
+              </h2>
+              )
+            }
+            {
+              active == '03' && (
+              <>
+                <BillingDetails/>
+                <OrderSummary/>
+              </>
+              )
+            }
         </div>
     </Container>
     </div>

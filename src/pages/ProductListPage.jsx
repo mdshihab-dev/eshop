@@ -73,11 +73,11 @@ const ProductListPage = () => {
   let maxParcet = (maxValue / 5000) * 100 
 
   return (
-    <div className='mt-16'>
+    <div className=' mt-2 lg:mt-16'>
       <Container>
       <div className=' flex justify-between relative'>
                                                     {/* Catagories portion  */}
-        <div>
+        <div className=' hidden lg:flex'>
           <div className='w-[355px] mb-[88px] sticky top-0 box-border p-12 bg-[#F4F4F4] rounded-[25px]'>
           <div className='w-full'> 
                                                     {/* Categories Dropdown  */} 

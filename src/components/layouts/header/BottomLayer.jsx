@@ -50,7 +50,7 @@ const BottomLayer = () => {
               <FaBars className=" h-5 w-5" />
               <button className="cursor-pointer" onClick={()=> setIsDropDownOpen1(!isDropDownOpen1)}> {t("All_Categories")} </button>
               {isDropDownOpen1 && (
-                <ul className="bg-[#fff] border border-[#CBCBCB] rounded-[5px] overflow-hidden font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px]">
+                <ul className="bg-[#fff] z-50 border border-[#CBCBCB] rounded-[5px] overflow-hidden font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px]">
                   <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
                     Electronics
                   </li>
@@ -75,7 +75,7 @@ const BottomLayer = () => {
                 <MdKeyboardArrowDown className={`${isDropDownOpen2 ? `rotate-180` : `rotate-0`} transition-all ml-2 h-6 w-6`} />
               </button>
               {isDropDownOpen2 && (
-                <ul className="bg-[#fff] border border-[#CBCBCB] rounded-[5px] overflow-hidden  font-montserrat font-semibold absolute box-border top-8 left-[-45px] shadow-xl text-sm text-[#303030] w-[180px]">
+                <ul className="bg-[#fff] z-50 border border-[#CBCBCB] rounded-[5px] overflow-hidden  font-montserrat font-semibold absolute box-border top-8 left-[-45px] shadow-xl text-sm text-[#303030] w-[180px]">
                   <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
                     Gaming Consoles
                   </li>
@@ -98,22 +98,22 @@ const BottomLayer = () => {
               )}
             </li>
             <li>
-              <Link to={"/blog"}> {t("Blog")} </Link>
+              <Link to={"/product-list"}> {t("Product list")} </Link>
             </li>
             <li>
-              <Link to={"/contact"}>{t("Contact")}</Link>
+              <Link to={"/product-detail"}>{t("Product details")}</Link>
             </li>
           </ul>
 
           <ul className=" text-white font-bold font-montserrat text-base leading-6 flex gap-x-[80px]">
             <li className=" flex items-center justify-center gap-x-4">
-              <Link to={"#"}>{t("LIMITED_SALE")}</Link>
+              <Link to={"/cart"}>{t("Carts")}</Link>
             </li>
             <li>
-              <Link to={"#"}>{t("Best_Sellers")}</Link>
+              <Link to={"/checkout"}>{t("Checkout")}</Link>
             </li>
             <li>
-              <Link to={"#"}>{t("New_Arrival")}</Link>
+              <Link to={"/contact"}>{t("Contact")}</Link>
             </li>
           </ul>
         </div>

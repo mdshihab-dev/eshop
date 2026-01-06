@@ -81,31 +81,31 @@ const PaginationProducts = () => {
   return (
     <div>
       <div className=" flex items-start justify-between">
-        <div className="mb-12">
-          <h1 className=" text-[#303030] font-poppins text-4xl font-semibold leading-[46px]">
+        <div className=" lg:mb-12">
+          <h1 className=" text-[#303030] font-poppins text-xl lg:text-4xl font-semibold leading-[46px]">
             Products
           </h1>
-          <p className="mt-6 text-[#303030] font-montserrat text-base font-normal leading-6">
+          <p className=" hidden lg:flex mt-6 text-[#303030] font-montserrat text-base font-normal leading-6">
             Showing {startIndex + 1} - {endIndex} of { products.length} results.
           </p>
         </div>
 
-       <div className=" mt-[68px]">
+       <div className=" mt-3 lg:mt-[68px]">
           <div className=" flex items-center">
-            <p className=" text-[#303030] font-montserrat text-[16px] font-normal leading-6">Sort by</p>
+            <p className=" text-[#303030] hidden lg:flex font-montserrat text-[16px] font-normal leading-6">Sort by</p>
             <div 
               onClick={()=> {setIsDropDownOpen1(!isDropDownOpen1) }}
               ref={dropdownRef}
-              className=" relative flex items-center pl-4 pr-6 box-border"> 
+              className=" relative flex items-center pl-4 pr-2 lg:pr-6 box-border"> 
                 {selected 
                 ?
-                <div  className=" flex items-center gap-x-12 cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen1 && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
+                <div  className=" flex items-center gap-x-2 lg:gap-x-12 cursor-pointer text-[#FF624C] font-montserrat text-sm lg:text-base font-bold leading-6"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen1 && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
                 : 
-                <div  className=" flex items-center gap-x-12 cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> Popularity <IoIosArrowDown  className={`${isDropDownOpen1 && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
+                <div  className=" flex items-center gap-x-2 lg:gap-x-12 cursor-pointer text-[#FF624C] font-montserrat text-sm lg:text-base font-bold leading-6"> Popularity <IoIosArrowDown  className={`${isDropDownOpen1 && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
                 }
 
               {isDropDownOpen1 && (
-                  <ul className="bg-[#fff] rounded-[5px] overflow-hidden right-2 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
+                  <ul className="bg-[#fff] rounded-[5px] overflow-hidden -right-7 lg:right-2 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
                     {sortOne.map((item,index)=>{
 
                     return <li onClick={()=> handleSelect(item.sorted)} className={` py-2 px-3 border-b border-[#CBCBCB] cursor-pointer  last:border-b-transparent hover:bg-[#ddd]`} key={index}> {item.sorted} </li>
@@ -119,16 +119,16 @@ const PaginationProducts = () => {
              <div 
               onClick={()=> {setIsDropDownOpen2(!isDropDownOpen2) }}
               ref={dropdownRef2}
-              className=" relative w-[267px] border-l border-[#30303048] border-r px-6 flex items-center"> 
+              className=" relative w-auto lg:w-[267px] border-l border-[#30303048] border-r px-2 lg:px-6 flex items-center"> 
                 {priceSorted 
                 ?
-                <div  className=" flex items-center gap-x-12 cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> <span className=""> {priceSorted} </span> <IoIosArrowDown  className={`${isDropDownOpen2 && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
+                <div  className=" flex items-center gap-x-2 lg:gap-x-12 cursor-pointer text-[#FF624C] font-montserrat text-sm lg:text-base font-bold leading-6"> <span className=""> {priceSorted} </span> <IoIosArrowDown  className={`${isDropDownOpen2 && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
                 : 
-                <div  className=" flex items-center gap-x-12 w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> Price Low-to-High <IoIosArrowDown  className={`${isDropDownOpen2 && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
+                <div  className=" flex items-center gap-x-2 lg:gap-x-12 w-auto lg:w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-sm lg:text-base font-bold leading-6"> Price Low-to-High <IoIosArrowDown  className={`${isDropDownOpen2 && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
                 }
 
               {isDropDownOpen2 && (
-                  <ul className="bg-[#fff] rounded-[5px] overflow-hidden right-16 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
+                  <ul className="bg-[#fff] rounded-[5px] overflow-hidden right-22 lg:right-16 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
                   {SortByPrice.map((item,index)=>{
 
                     return <li onClick={()=> handleSelect2(item.sorted)} className={` py-2 px-3 border-b border-[#CBCBCB] cursor-pointer  last:border-b-transparent hover:bg-[#ddd]`} key={index}> {item.sorted} </li>
@@ -139,7 +139,7 @@ const PaginationProducts = () => {
                 )}
             </div>
 
-            <div className=" flex gap-x-3 ml-6">
+            <div className=" hidden lg:flex gap-x-3 ml-6">
               <GridViewIcon/>
               <FaBars className=" text-[#CBCBCB] text-2xl cursor-pointer"/>
             </div>
@@ -147,10 +147,11 @@ const PaginationProducts = () => {
        </div>
 
       </div>
+
       <div className="w-full flex flex-wrap">
         {currentProducts.map((item, index) => {
           return (
-            <div key={index} className="max-w-[285px]">
+            <div key={index} className=" max-w-screen scale-[96%] lg:scale-100 lg:max-w-[285px]">
               <ProductLayout
                 catagory={item.name}
                 tittle={"WH-1000XM4 Wireless Headphones High Qu..."}
