@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const CheakoutPage = () => {
 
-  let [active,setActive] = useState("01")
+  let [active,setActive] = useState("03")
 
   return (
     <div className=' mt-16'>
